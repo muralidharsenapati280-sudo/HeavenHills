@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hill of Haven – Premium Travel & Mountain Escapes</title>
+<meta name="description" content="Hill of Haven – discover famous places, history and museums by state and district, and book your premium mountain getaway.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="nav" id="nav">
+  <a href="#home" class="logo">Hill <i>of</i> Haven</a>
+  <nav id="menu" aria-label="Main"><a href="#about">About</a><a href="#explore">Explore</a><a href="#destinations">Destinations</a><a href="#packages">Packages</a><a href="#book">Book</a><a href="#contact">Contact</a><a href="login.html" id="loginLink">Login</a></nav>
+  <a href="#book" class="btn gold nav-cta">Book Now</a>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span></button>
+</header>
+
+<section class="hero" id="home">
+  <div class="scene" aria-hidden="true"></div>
+  <video class="bg" autoplay muted loop playsinline preload="auto" onerror="this.remove()">
+    <source src="video/mountain.mp4" type="video/mp4">
+  </video>
+  <div class="shade"></div>
+  <div class="hero-in">
+    <p class="eyebrow">Premium Mountain Travel</p>
+    <h1>Where the hills<br><i>welcome you home</i></h1>
+    <p class="lead">Discover famous places, living history and museums across India – then book a stay crafted just for you.</p>
+    <div class="row"><a href="#explore" class="btn gold">Explore Destinations</a><a href="#book" class="btn line">Book Your Trip</a></div>
+  </div>
+  <div class="stats"><div><b>36</b><span>States & UTs</span></div><div><b>36</b><span>Capitals</span></div><div><b>140+</b><span>Famous Places</span></div><div><b>15+</b><span>Museums</span></div></div>
+</section>
+
+<section class="sec offer" id="about"><div class="offer-img reveal"></div><div class="reveal"><p class="eyebrow">What we offer</p><h2>Travel with <i>meaning</i></h2><p class="muted">From Himalayan villages to island lagoons, Hill of Haven helps you pick the right place at the right time – and book it in minutes.</p><ul class="feat"><li><b>All 36 States & UTs</b>Capitals, famous places and the best season to go.</li><li><b>Moments & Experiences</b>The stories and history that make each place special.</li><li><b>Museums & Heritage</b>Plan visits to historic sites and local museums.</li><li><b>Easy Booking</b>Choose a package, get an estimate and confirm on WhatsApp.</li></ul><a class="btn gold" href="#explore">Start exploring</a></div></section>
+
+<section class="sec" id="explore">
+  <p class="eyebrow">Explore by Location</p><h2>Where do you want <i>to go?</i></h2>
+  <div class="picker">
+    <label>Search<input id="q" type="search" placeholder="Type a state or UT…" autocomplete="off"></label>
+    <label>State / UT<select id="state"></select></label>
+    <label>District / Capital<select id="district"></select></label>
+    <button class="btn gold" id="bookThis">Book this destination</button>
+  </div>
+  <div class="panel reveal" id="panel">
+    <div class="p-head"><h3 id="pTitle"></h3><p id="pTag"></p></div>
+    <div class="tabs" role="tablist"><button class="on" data-t="places">Famous Places</button><button data-t="time">Best Time</button><button data-t="exp">Experience</button><button data-t="moments">Historical Moments</button><button data-t="museums">Museums</button></div>
+    <ul class="list" id="list"></ul>
+  </div>
+</section>
+
+<section class="sec alt" id="destinations">
+  <p class="eyebrow">Featured Destinations</p><h2>Every <i>state & union territory</i></h2>
+  <div class="cards" id="cards"></div>
+</section>
+
+<section class="sec" id="packages">
+  <p class="eyebrow">Travel Packages</p><h2>Crafted for <i>every traveller</i></h2>
+  <div class="pk">
+    <article class="reveal"><h3>Standard</h3><p class="pr">₹ base rate</p><ul><li>Comfort hotel stay</li><li>Daily breakfast</li><li>Local sightseeing</li></ul><a href="#book" class="btn line" data-pk="Standard">Choose</a></article>
+    <article class="hot reveal"><span class="badge">Most Loved</span><h3>Premium</h3><p class="pr">1.6× base rate</p><ul><li>4★ hotel / boutique stay</li><li>Breakfast & dinner</li><li>Private cab & guide</li></ul><a href="#book" class="btn gold" data-pk="Premium">Choose</a></article>
+    <article class="reveal"><h3>Luxury</h3><p class="pr">2.5× base rate</p><ul><li>Luxury resort / heritage palace</li><li>All meals included</li><li>Personal concierge & experiences</li></ul><a href="#book" class="btn line" data-pk="Luxury">Choose</a></article>
+  </div>
+</section>
+
+<section class="sec alt" id="book">
+  <p class="eyebrow">Booking</p><h2>Plan your <i>escape</i></h2>
+  <form id="bookForm" class="bk" novalidate>
+    <label>Full name<input name="name" required autocomplete="name"></label>
+    <label>Phone<input name="phone" type="tel" required autocomplete="tel"></label>
+    <label>Email<input name="email" type="email" required autocomplete="email"></label>
+    <label>Travellers<input name="pax" type="number" min="1" max="20" value="2" required></label>
+    <label>State<select id="bState"></select></label>
+    <label>District<select id="bDistrict"></select></label>
+    <label>Check-in<input name="in" type="date" required></label>
+    <label>Check-out<input name="out" type="date" required></label>
+    <label class="full">Package<select name="pk" id="bPk"><option>Standard</option><option>Premium</option><option>Luxury</option></select></label>
+    <div class="est full"><span>Estimated total</span><b id="est">₹0</b><small>Sample estimate – final price confirmed by our team.</small></div>
+    <button class="btn gold full" type="submit">Request Booking</button>
+    <p id="msg" class="full" role="status"></p>
+  </form>
+  <div class="mine"><h3>My bookings</h3><ul id="mine"></ul></div>
+</section>
+
+<footer id="contact">
+  <div><a href="#home" class="logo">Hill <i>of</i> Haven</a><p>Premium mountain travel across India.</p></div>
+  <div><h4>Contact</h4><p><a href="tel:+918114877142">+91 00000 00000</a></p><p><a href="mailto:muralidharsenapati280@gmail.com">muralidharsenapati280@gmail.com</a></p></div>
+  <div><h4>Explore</h4><p><a href="#explore">By State & District</a></p><p><a href="#packages">Packages</a></p><p><a href="#book">Book Now</a></p></div>
+  <p class="copy">© <span id="yr">2026</span> Hill of Haven. All rights reserved.</p>
+</footer>
+
+<div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="mt"><div><h3 id="mt">Booking request received</h3><p id="mb"></p><div class="row"><a class="btn gold" id="wa" target="_blank" rel="noopener">Confirm on WhatsApp</a><button class="btn line" id="mc">Close</button></div></div></div>
+<script src="data.js"></script><script src="states.js"></script><script src="script.js"></script>
+</body></html>

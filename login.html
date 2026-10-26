@@ -1,0 +1,14 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Login – Hill of Haven</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body class="authpg">
+<div class="auth"><aside><a href="index.html" class="logo">Hill <i>of</i> Haven</a><div><p class="eyebrow">Your journey begins</p><h2>Every mountain<br>has a <i>story</i></h2></div></aside>
+<main><form id="auth" novalidate><h1 id="aTitle"></h1>
+<label id="nameWrap">Full name<input name="name" autocomplete="name"></label>
+<label>Email<input name="email" type="email" autocomplete="email"></label>
+<label>Password<input name="pass" type="password" autocomplete="current-password"></label>
+<button class="btn gold" id="go" type="submit"></button><p id="am" role="status"></p>
+<p class="swap"><span id="sub"></span> <button type="button" id="swap"></button></p>
+<p class="swap"><a href="index.html">← Back to home</a></p></form></main></div>
+<script src="auth.js"></script></body></html>
